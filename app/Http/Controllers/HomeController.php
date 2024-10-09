@@ -60,8 +60,8 @@ class HomeController extends Controller
                 $product_price = 20; // biến này lưu trữ giá sp
                 break; // thoát vòng lặp
             default:
-                echo "Sản phẩm kh tồn tại.";
-                exit;
+               break;
+
 
             echo "giá của sản phẩm $produnt_name là: $product_prite"; // in ra giá tên và giá trị sản phẩm
 
