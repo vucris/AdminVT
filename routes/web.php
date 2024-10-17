@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +23,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/trang-chu', [App\Http\Controllers\HomeController::class, 'index'])->name('trang-chu');
+Route::prefix('/admin')->group(function () {
+    Route::prefix('/shop')->group(function () {
+        Route::get('/getListCategory', [CategoryController::class, 'getListCategory'])->name('admin.shop.category.index');
+        Route::get('/getListProduct', [ProductController::class, 'getListProduct'])->name('admin.shop.product.index');
+    });
+});

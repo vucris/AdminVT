@@ -61,19 +61,12 @@ class HomeController extends Controller
                 break; // thoát vòng lặp
             default:
                break;
-
-
-
-
         }
-
-
-
-
+        $data['chuoi'] = $chuoi;
         $data['count_t'] = $count_t;
         $data['product_name'] = $product_name;
         $data['product_price'] = $product_price;
-        return view('home', ['data' => $data]);
+        return view('home', ['du_lieu' => $data]);
     }
 
     public function checkPriceOfProduct()
